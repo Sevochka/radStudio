@@ -1,0 +1,197 @@
+object fm: Tfm
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 723
+  ClientWidth = 556
+  Position = Designed
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 3
+  object ToolBar1: TToolBar
+    Size.Width = 556.000000000000000000
+    Size.Height = 48.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object Label1: TLabel
+      Align = Contents
+      StyledSettings = [Family, FontColor]
+      Size.Width = 556.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 24.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.HorzAlign = Center
+      Text = 'Learning Poetry'
+      TabOrder = 3
+    end
+    object buSizeIn: TButton
+      Align = Left
+      Position.X = 47.000000000000000000
+      Position.Y = 7.000000000000000000
+      Size.Width = 47.000000000000000000
+      Size.Height = 34.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'stepperbuttonright'
+      TabOrder = 1
+      Text = 'buSizeIn'
+      OnClick = buSizeInClick
+    end
+    object buSizeOut: TButton
+      Align = Left
+      Position.Y = 7.000000000000000000
+      Size.Width = 47.000000000000000000
+      Size.Height = 34.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'stepperbuttonleft'
+      TabOrder = 0
+      Text = 'Button1'
+      OnClick = buSizeOutClick
+    end
+    object buAbout: TButton
+      Align = Right
+      Position.X = 508.000000000000000000
+      Size.Width = 48.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'infotoolbutton'
+      TabOrder = 2
+      Text = 'buAbout'
+    end
+  end
+  object tc: TTabControl
+    Align = Client
+    FullSize = True
+    Size.Width = 556.000000000000000000
+    Size.Height = 675.000000000000000000
+    Size.PlatformDefault = False
+    TabHeight = 49.000000000000000000
+    TabIndex = 3
+    TabOrder = 1
+    TabPosition = Bottom
+    Sizes = (
+      556s
+      626s
+      556s
+      626s
+      556s
+      626s
+      556s
+      626s)
+    object TabItem1: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 139.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Full'
+      object meFull: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        DataDetectorTypes = []
+        Lines.Strings = (
+          #1051#1080#1083#1080#1095#1082#1072
+          ''
+          #1044#1099#1084' '#1090#1072#1073#1072#1095#1085#1099#1081' '#1074#1086#1079#1076#1091#1093' '#1074#1099#1077#1083','
+          #1050#1086#1084#1085#1072#1090#1072' - '#1075#1083#1072#1074#1072' '#1074' '#1082#1088#1091#1095#1077#1085#1099#1093#1086#1074#1089#1082#1086#1084' '#1072#1076#1077','
+          #1042#1089#1087#1086#1084#1085#1080', '#1079#1072' '#1101#1090#1080#1084' '#1086#1082#1085#1086#1084' '#1074#1087#1077#1088#1074#1099#1077','
+          #1071' '#1088#1091#1082#1080' '#1090#1074#1086#1080' '#1080#1089#1090#1091#1087#1083#1077#1085#1085#1099#1081' '#1075#1083#1072#1076#1080#1083','
+          #1057#1077#1075#1086#1076#1085#1103' '#1089#1080#1076#1080#1096#1100' '#1074#1086#1090', '#1089#1077#1088#1076#1094#1077' '#1074' '#1078#1077#1083#1077#1079#1077','
+          #1044#1077#1085#1100' '#1077#1097#1077' - '#1074#1075#1086#1085#1080#1096#1100', '#1084#1086#1078#1077#1090' '#1073#1099#1090#1100', '#1080#1079#1088#1091#1075#1072#1074)
+        ReadOnly = True
+        StyledSettings = [Family, Style, FontColor]
+        TextSettings.Font.Size = 25.000000000000000000
+        Align = Client
+        Size.Width = 556.000000000000000000
+        Size.Height = 626.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Viewport.Width = 548.000000000000000000
+        Viewport.Height = 618.000000000000000000
+      end
+    end
+    object TabItem2: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 139.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Accross a line'
+      object me1: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        DataDetectorTypes = []
+        ReadOnly = True
+        StyledSettings = [Family, Style, FontColor]
+        TextSettings.Font.Size = 30.000000000000000000
+        Align = Client
+        Size.Width = 556.000000000000000000
+        Size.Height = 626.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Viewport.Width = 548.000000000000000000
+        Viewport.Height = 618.000000000000000000
+      end
+    end
+    object TabItem3: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 139.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'First words'
+      object me2: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        DataDetectorTypes = []
+        ReadOnly = True
+        StyledSettings = [Family, Style, FontColor]
+        TextSettings.Font.Size = 30.000000000000000000
+        Align = Client
+        Size.Width = 556.000000000000000000
+        Size.Height = 626.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Viewport.Width = 548.000000000000000000
+        Viewport.Height = 618.000000000000000000
+      end
+    end
+    object TabItem4: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = True
+      Size.Width = 139.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'First letter'
+      object me3: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        DataDetectorTypes = []
+        ReadOnly = True
+        StyledSettings = [Family, Style, FontColor]
+        TextSettings.Font.Size = 30.000000000000000000
+        Align = Client
+        Size.Width = 556.000000000000000000
+        Size.Height = 626.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Viewport.Width = 548.000000000000000000
+        Viewport.Height = 618.000000000000000000
+      end
+    end
+  end
+end

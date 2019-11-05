@@ -1,0 +1,111 @@
+object fm: Tfm
+  Left = 0
+  Top = 0
+  Caption = 'labWebBrowser'
+  ClientHeight = 543
+  ClientWidth = 533
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 3
+  object ToolBar1: TToolBar
+    Size.Width = 533.000000000000000000
+    Size.Height = 48.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object edURL: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Align = VertCenter
+      TabOrder = 0
+      Text = 'https://google.com'
+      Position.X = 5.000000000000000000
+      Position.Y = 8.000000000000000000
+      Margins.Left = 5.000000000000000000
+      Size.Width = 480.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      OnKeyDown = edURLKeyDown
+    end
+    object buGo: TButton
+      Align = Right
+      Position.X = 485.000000000000000000
+      Size.Width = 48.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'playtoolbutton'
+      TabOrder = 1
+      Text = 'Open'
+      OnClick = buGoClick
+    end
+  end
+  object ToolBar2: TToolBar
+    Align = Bottom
+    Position.Y = 495.000000000000000000
+    Size.Width = 533.000000000000000000
+    Size.Height = 48.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object buForward: TButton
+      Align = Left
+      Position.X = 48.000000000000000000
+      Size.Width = 48.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'arrowrighttoolbutton'
+      TabOrder = 0
+      Text = 'buForward'
+      OnClick = buForwardClick
+    end
+    object buBack: TButton
+      Align = Left
+      Size.Width = 48.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'arrowlefttoolbuttonbordered'
+      TabOrder = 1
+      Text = 'buBack'
+      OnClick = buBackClick
+    end
+    object buStop: TButton
+      Align = Left
+      Position.X = 144.000000000000000000
+      Size.Width = 48.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'stoptoolbutton'
+      TabOrder = 2
+      Text = 'buStop'
+      OnClick = buStopClick
+    end
+    object buAbout: TButton
+      Align = Right
+      Position.X = 485.000000000000000000
+      Size.Width = 48.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'infotoolbutton'
+      TabOrder = 3
+      Text = 'buAbout'
+      OnClick = buAboutClick
+    end
+    object buReload: TButton
+      Align = Left
+      Position.X = 96.000000000000000000
+      Size.Width = 48.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'refreshtoolbutton'
+      TabOrder = 4
+      Text = 'buReload'
+      OnClick = buReloadClick
+    end
+  end
+  object wb: TWebBrowser
+    Align = Client
+    Size.Width = 533.000000000000000000
+    Size.Height = 447.000000000000000000
+    Size.PlatformDefault = False
+    OnDidFinishLoad = wbDidFinishLoad
+  end
+end
