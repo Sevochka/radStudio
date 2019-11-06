@@ -34,14 +34,6 @@ void __fastcall Tfm::FormCreate(TObject *Sender)
 	blackChance = 50;
 	redChance = 50;
 
-
-	tbZeroChance->Value = zeroChance;
-	tbBlackChance->Value = blackChance;
-	tbRedChance->Value = redChance;
-
-	laZeroChance->Text = zeroChance;
-	laBlackChance->Text = blackChance;
-	laRedChance->Text = redChance;
 }
 //---------------------------------------------------------------------------
 void Tfm::ChangeImg(int imgValue){
@@ -347,14 +339,14 @@ void __fastcall Tfm::buThemeClick(TObject *Sender)
 	}
 	fm->StyleBook = sbDark;
 	buTheme->Text = "Light";
+
 }
 //---------------------------------------------------------------------------
 
 void __fastcall Tfm::buPreviousClick(TObject *Sender)
 {
-	zeroChance = tbZeroChance->Value;;
+	zeroChance = 100 - tbZeroChance->Value;;
 	blackChance = tbBlackChance->Value;
-	redChance = tbRedChance->Value;
 	tc->Previous();
 }
 //---------------------------------------------------------------------------
@@ -362,27 +354,17 @@ void __fastcall Tfm::buPreviousClick(TObject *Sender)
 void __fastcall Tfm::tbBlackChanceChange(TObject *Sender)
 {
    laBlackChance->Text = tbBlackChance->Value;
+   laRedChance->Text = 100 - tbBlackChance->Value;
+
 }
 //---------------------------------------------------------------------------
 
 
 void __fastcall Tfm::tbZeroChanceChange(TObject *Sender)
 {
-	laZeroChance->Text = tbZeroChance->Value;
+	laBRChance->Text = tbZeroChance->Value;
+	laZeroChance->Text = 100 - tbZeroChance->Value;
 }
 //---------------------------------------------------------------------------
 
-void __fastcall Tfm::tbRedChanceChange(TObject *Sender)
-{
-	int sum = tbRedChance->Value + tbBlackChance->Value;
-	laRedChance->Text = tbRedChance->Value;
-	if (sum > 100) {
-		tbBlackChance->Value = tbBlackChance->Value - 1;
-	}
-	else{
-		tbBlackChance->Value = tbBlackChance->Value + 1;
-	}
-
-}
-//---------------------------------------------------------------------------
 

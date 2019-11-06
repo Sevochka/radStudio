@@ -196,9 +196,6 @@ Coordinates=489,132,40,33
 [Image11]
 Coordinates=64,10,55,51
 
-[laTheme]
-Coordinates=240,71,56,51
-
 [laBet]
 Coordinates=129,10,40,51
 
@@ -221,41 +218,8 @@ Coordinates=26,512,49,33
 Coordinates=10,132,52,51
 
 []
-Coordinates=254,350,53,33
-
-[Layout1]
 Coordinates=460,331,53,33
-
-[laZeroChance]
-Coordinates=411,350,82,51
 
 [buPrevious]
 Coordinates=622,211,70,51
-
-[Layout2]
-Coordinates=254,350,53,33
-
-[Label4]
-Coordinates=362,350,46,51
-
-[Label6]
-Coordinates=205,350,46,51
-
-[Layout3]
-Coordinates=622,80,53,33
-
-[tbZeroChance]
-Coordinates=588,141,83,51
-
-[tbBlackChance]
-Coordinates=521,350,88,51
-
-[tbRedChance]
-Coordinates=588,331,80,51
-
-[laBlackChance]
-Coordinates=156,350,87,51
-
-[laRedChance]
-Coordinates=313,350,79,51
 

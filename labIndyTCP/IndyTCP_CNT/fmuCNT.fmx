@@ -1,0 +1,160 @@
+object fm: Tfm
+  Left = 0
+  Top = 0
+  Caption = 'labIndyTCP_CNT'
+  ClientHeight = 480
+  ClientWidth = 393
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object TLayout
+    Align = Top
+    Size.Width = 393.000000000000000000
+    Size.Height = 217.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object edHost: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 1
+      Text = '127.0.0.1'
+      Position.X = 32.000000000000000000
+      Position.Y = 16.000000000000000000
+      Size.Width = 121.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object edPort: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 0
+      Text = '8091'
+      Position.X = 176.000000000000000000
+      Position.Y = 16.000000000000000000
+      Size.Width = 97.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object buConnect: TButton
+      Action = acConnect
+      Enabled = True
+      StyledSettings = [Family, FontColor]
+      ImageIndex = -1
+      Position.X = 32.000000000000000000
+      Position.Y = 64.000000000000000000
+      Size.Width = 113.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 6
+      TextSettings.Font.Size = 18.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+    end
+    object buDisconnect: TButton
+      Action = acDisconnect
+      Enabled = True
+      StyledSettings = [Family, FontColor]
+      ImageIndex = -1
+      Position.X = 160.000000000000000000
+      Position.Y = 64.000000000000000000
+      Size.Width = 113.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 5
+      TextSettings.Font.Size = 18.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+    end
+    object buTime: TButton
+      Action = acGetTime
+      Enabled = True
+      StyledSettings = [Family, FontColor]
+      ImageIndex = -1
+      Position.X = 32.000000000000000000
+      Position.Y = 96.000000000000000000
+      Size.Width = 113.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 4
+      TextSettings.Font.Size = 18.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+    end
+    object buStr: TButton
+      Action = acGetStr
+      Enabled = True
+      StyledSettings = [Family, FontColor]
+      ImageIndex = -1
+      Position.X = 32.000000000000000000
+      Position.Y = 128.000000000000000000
+      Size.Width = 113.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      TextSettings.Font.Size = 18.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+    end
+    object buImage: TButton
+      Action = acGetImage
+      Enabled = True
+      StyledSettings = [Family, FontColor]
+      ImageIndex = -1
+      Position.X = 32.000000000000000000
+      Position.Y = 160.000000000000000000
+      Size.Width = 113.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      TextSettings.Font.Size = 18.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+    end
+    object im: TImage
+      MultiResBitmap = <
+        item
+        end>
+      Position.X = 160.000000000000000000
+      Position.Y = 96.000000000000000000
+      Size.Width = 121.000000000000000000
+      Size.Height = 105.000000000000000000
+      Size.PlatformDefault = False
+    end
+  end
+  object me: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    DataDetectorTypes = []
+    Align = Client
+    Size.Width = 393.000000000000000000
+    Size.Height = 263.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    Viewport.Width = 389.000000000000000000
+    Viewport.Height = 259.000000000000000000
+  end
+  object IdTCPClient: TIdTCPClient
+    ConnectTimeout = 0
+    IPVersion = Id_IPv4
+    Port = 0
+    ReadTimeout = -1
+    Left = 320
+    Top = 128
+  end
+  object al: TActionList
+    Left = 320
+    Top = 80
+    object acConnect: TAction
+      Text = 'Connect'
+      OnExecute = acConnectExecute
+    end
+    object acDisconnect: TAction
+      Text = 'Disconnect'
+      OnExecute = acDisconnectExecute
+    end
+    object acGetTime: TAction
+      Text = 'Get Time'
+      OnExecute = acGetTimeExecute
+    end
+    object acGetStr: TAction
+      Text = 'Get Str'
+      OnExecute = acGetStrExecute
+    end
+    object acGetImage: TAction
+      Text = 'Get Image'
+    end
+  end
+end
