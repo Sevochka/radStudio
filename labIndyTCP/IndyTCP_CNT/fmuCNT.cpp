@@ -17,7 +17,7 @@ __fastcall Tfm::Tfm(TComponent* Owner)
 void __fastcall Tfm::acConnectExecute(TObject *Sender)
 {
 	IdTCPClient->Host = edHost->Text;
-	IdTCPCLient->Port = StrToInt(edport->Text);
+	IdTCPClient->Port = StrToInt(edPort->Text);
     IdTCPClient->Connect();
 }
 //---------------------------------------------------------------------------
@@ -42,3 +42,67 @@ void __fastcall Tfm::acGetStrExecute(TObject *Sender)
 	me->Lines->Add(x);
 }
 //---------------------------------------------------------------------------
+
+
+void __fastcall Tfm::acGetImageExecute(TObject *Sender)
+{
+	IdTCPClient->Socket->WriteLn("image");
+	TMemoryStream *x = new TMemoryStream();
+	try{
+		int xSize = IdTCPClient->Socket->ReadInt64();
+		IdTCPClient->Socket->ReadStream(x, xSize);
+		im->Bitmap->LoadFromStream(x);
+	}
+	__finally{
+        delete x;
+    }
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall Tfm::alUpdate(TBasicAction *Action, bool &Handled)
+{
+    edHost->Enabled = !IdTCPClient->Connected();
+	edPort->Enabled = !IdTCPClient->Connected();
+	acConnect->Enabled = !IdTCPClient->Connected();
+	acDisconnect->Enabled = IdTCPClient->Connected();
+	acGetTime->Enabled = IdTCPClient->Connected();
+	acGetStr->Enabled = IdTCPClient->Connected();
+	acGetImage->Enabled = IdTCPClient->Connected();
+	acGetFile->Enabled = !IdTCPClient->Connected();
+}
+
+//---------------------------------------------------------------------------
+
+void __fastcall Tfm::acGetRandomExecute(TObject *Sender)
+{
+	IdTCPClient->Socket->WriteLn("file");
+	UnicodeString x;
+	x = IdTCPClient->Socket->ReadLn();
+	me->Lines->Add(x);
+
+
+}
+//---------------------------------------------------------------------------
+
+void __fastcall Tfm::Edit1ChangeTracking(TObject *Sender)
+{
+   // a = Edit1->Value;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall Tfm::Edit2ChangeTracking(TObject *Sender)
+{
+   //	b = Edit2->Value;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall Tfm::Button2Click(TObject *Sender)
+{
+	IdTCPClient->Socket->WriteLn("file");
+	UnicodeString x;
+	x = IdTCPClient->Socket->ReadLn();
+	me->Lines->Add(x);
+}
+//---------------------------------------------------------------------------
+

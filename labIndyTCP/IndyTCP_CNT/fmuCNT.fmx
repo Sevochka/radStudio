@@ -11,7 +11,7 @@ object fm: Tfm
   object TLayout
     Align = Top
     Size.Width = 393.000000000000000000
-    Size.Height = 217.000000000000000000
+    Size.Height = 273.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
     object edHost: TEdit
@@ -44,7 +44,7 @@ object fm: Tfm
       Size.Width = 113.000000000000000000
       Size.Height = 22.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 6
+      TabOrder = 8
       TextSettings.Font.Size = 18.000000000000000000
       TextSettings.Font.StyleExt = {00070000000000000004000000}
     end
@@ -58,7 +58,7 @@ object fm: Tfm
       Size.Width = 113.000000000000000000
       Size.Height = 22.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 5
+      TabOrder = 7
       TextSettings.Font.Size = 18.000000000000000000
       TextSettings.Font.StyleExt = {00070000000000000004000000}
     end
@@ -72,7 +72,7 @@ object fm: Tfm
       Size.Width = 113.000000000000000000
       Size.Height = 22.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 4
+      TabOrder = 6
       TextSettings.Font.Size = 18.000000000000000000
       TextSettings.Font.StyleExt = {00070000000000000004000000}
     end
@@ -86,7 +86,7 @@ object fm: Tfm
       Size.Width = 113.000000000000000000
       Size.Height = 22.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 3
+      TabOrder = 5
       TextSettings.Font.Size = 18.000000000000000000
       TextSettings.Font.StyleExt = {00070000000000000004000000}
     end
@@ -100,7 +100,7 @@ object fm: Tfm
       Size.Width = 113.000000000000000000
       Size.Height = 22.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 2
+      TabOrder = 4
       TextSettings.Font.Size = 18.000000000000000000
       TextSettings.Font.StyleExt = {00070000000000000004000000}
     end
@@ -114,17 +114,66 @@ object fm: Tfm
       Size.Height = 105.000000000000000000
       Size.PlatformDefault = False
     end
+    object Button1: TButton
+      Action = acGetRandom
+      Enabled = True
+      StyledSettings = [Family, FontColor]
+      ImageIndex = -1
+      Position.X = 32.000000000000000000
+      Position.Y = 192.000000000000000000
+      Size.Width = 113.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      TextSettings.Font.Size = 18.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+    end
+    object Edit1: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 10
+      Position.X = 32.000000000000000000
+      Position.Y = 224.000000000000000000
+      Size.Width = 49.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      OnChangeTracking = Edit1ChangeTracking
+    end
+    object Edit2: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 9
+      Position.X = 96.000000000000000000
+      Position.Y = 224.000000000000000000
+      Size.Width = 49.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      OnChangeTracking = Edit2ChangeTracking
+    end
+    object Button2: TButton
+      Action = acGetFile
+      Enabled = True
+      StyledSettings = [Family, FontColor]
+      ImageIndex = -1
+      Position.X = 168.000000000000000000
+      Position.Y = 216.000000000000000000
+      Size.Width = 113.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      TextSettings.Font.Size = 18.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      OnClick = Button2Click
+    end
   end
   object me: TMemo
     Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
     DataDetectorTypes = []
     Align = Client
     Size.Width = 393.000000000000000000
-    Size.Height = 263.000000000000000000
+    Size.Height = 207.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 1
     Viewport.Width = 389.000000000000000000
-    Viewport.Height = 259.000000000000000000
+    Viewport.Height = 203.000000000000000000
   end
   object IdTCPClient: TIdTCPClient
     ConnectTimeout = 0
@@ -135,6 +184,7 @@ object fm: Tfm
     Top = 128
   end
   object al: TActionList
+    OnUpdate = alUpdate
     Left = 320
     Top = 80
     object acConnect: TAction
@@ -155,6 +205,14 @@ object fm: Tfm
     end
     object acGetImage: TAction
       Text = 'Get Image'
+      OnExecute = acGetImageExecute
+    end
+    object acGetRandom: TAction
+      Text = 'Random'
+      OnExecute = acGetRandomExecute
+    end
+    object acGetFile: TAction
+      Text = 'acGetFile'
     end
   end
 end

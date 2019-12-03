@@ -52,9 +52,15 @@ void __fastcall Tfm::IdTCPServerExecute(TIdContext *AContext)
 	if (x == "time") {
 		AContext->Connection->Socket->WriteLn(TimeToStr(Now()));
 	}
+	if (x == "num"){
+			AContext->Connection->Socket->WriteLn(IntToStr(Random(10)));
+	}
 	if (x == "str") {
 		AContext->Connection->Socket->WriteLn (edStr->Text,
 			IndyTextEncoding_UTF8());
+	}
+	if (x == "file") {
+		AContext->Connection->Socket->WriteLn(FilePath, IndyTextEncoding_UTF8());
 	}
 	if (x == "image") {
 		TMemoryStream *x = new TMemoryStream();
@@ -66,8 +72,24 @@ void __fastcall Tfm::IdTCPServerExecute(TIdContext *AContext)
 		}
 		__finally {
 			delete x;
-        }
+		}
 	}
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall Tfm::FileClick(TObject *Sender)
+{
+	TMemoryStream *x = new TMemoryStream();
+		try {
+			x->LoadFromFile("a.txt");
+		   x->Seek(0, 0);
+		   AContext->Connection->Socket->Write(x->Size);
+		   AContext->Connection->Socket->Write(x);
+		}
+		__finally {
+			delete x;
+		}
 }
 //---------------------------------------------------------------------------
 

@@ -40,11 +40,25 @@ __published:	// IDE-managed Components
 	TAction *acGetTime;
 	TAction *acGetStr;
 	TAction *acGetImage;
+	TButton *Button1;
+	TAction *acGetRandom;
+	TEdit *Edit1;
+	TEdit *Edit2;
+	TButton *Button2;
+	TAction *acGetFile;
 	void __fastcall acConnectExecute(TObject *Sender);
 	void __fastcall acDisconnectExecute(TObject *Sender);
 	void __fastcall acGetTimeExecute(TObject *Sender);
 	void __fastcall acGetStrExecute(TObject *Sender);
+	void __fastcall acGetImageExecute(TObject *Sender);
+	void __fastcall alUpdate(TBasicAction *Action, bool &Handled);
+	void __fastcall acGetRandomExecute(TObject *Sender);
+	void __fastcall Edit1ChangeTracking(TObject *Sender);
+	void __fastcall Edit2ChangeTracking(TObject *Sender);
+	void __fastcall Button2Click(TObject *Sender);
 private:	// User declarations
+int a;
+int b;
 public:		// User declarations
 	__fastcall Tfm(TComponent* Owner);
 };

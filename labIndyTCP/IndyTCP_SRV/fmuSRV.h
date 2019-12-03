@@ -21,6 +21,7 @@
 #include <IdContext.hpp>
 #include <FMX.ImgList.hpp>
 #include <System.ImageList.hpp>
+#include <FMX.Dialogs.hpp>
 //---------------------------------------------------------------------------
 class Tfm : public TForm
 {
@@ -32,12 +33,17 @@ __published:	// IDE-managed Components
 	TImage *im;
 	TMemo *me;
 	TIdTCPServer *IdTCPServer;
+	TButton *File;
+	TOpenDialog *OpenDialog1;
+	TImageList *ImageList1;
 	void __fastcall buStartClick(TObject *Sender);
 	void __fastcall buStopClick(TObject *Sender);
 	void __fastcall IdTCPServerConnect(TIdContext *AContext);
 	void __fastcall IdTCPServerDisconnect(TIdContext *AContext);
 	void __fastcall IdTCPServerExecute(TIdContext *AContext);
+	void __fastcall FileClick(TObject *Sender);
 private:	// User declarations
+    String FilePath;
 public:		// User declarations
 	__fastcall Tfm(TComponent* Owner);
 };
