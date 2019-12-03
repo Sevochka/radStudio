@@ -1,0 +1,338 @@
+object fm: Tfm
+  Left = 340
+  Top = 0
+  Caption = 'labCollage'
+  ClientHeight = 629
+  ClientWidth = 524
+  Position = Designed
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  Left = 340
+  DesignerMasterStyle = 3
+  object tbDefault: TToolBar
+    Size.Width = 524.000000000000000000
+    Size.Height = 48.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object buNewImage: TButton
+      Align = Left
+      Margins.Left = 3.000000000000000000
+      Margins.Top = 3.000000000000000000
+      Margins.Right = 3.000000000000000000
+      Margins.Bottom = 3.000000000000000000
+      Position.X = 3.000000000000000000
+      Position.Y = 3.000000000000000000
+      Size.Width = 126.000000000000000000
+      Size.Height = 42.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      Text = 'New Image'
+      OnClick = buNewImageClick
+    end
+    object buClear: TButton
+      Align = Left
+      Margins.Left = 3.000000000000000000
+      Margins.Top = 3.000000000000000000
+      Margins.Right = 3.000000000000000000
+      Margins.Bottom = 3.000000000000000000
+      Position.X = 375.000000000000000000
+      Position.Y = 3.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 42.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      Text = 'Clear'
+      OnClick = buClearClick
+    end
+    object buNewRect: TButton
+      Align = Left
+      Margins.Left = 3.000000000000000000
+      Margins.Top = 3.000000000000000000
+      Margins.Right = 3.000000000000000000
+      Margins.Bottom = 3.000000000000000000
+      Position.X = 135.000000000000000000
+      Position.Y = 3.000000000000000000
+      Size.Width = 114.000000000000000000
+      Size.Height = 42.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Text = 'New Rect'
+      OnClick = buNewRectClick
+    end
+    object buNewLabel: TButton
+      Align = Left
+      Margins.Left = 3.000000000000000000
+      Margins.Top = 3.000000000000000000
+      Margins.Right = 3.000000000000000000
+      Margins.Bottom = 3.000000000000000000
+      Position.X = 255.000000000000000000
+      Position.Y = 3.000000000000000000
+      Size.Width = 114.000000000000000000
+      Size.Height = 42.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'New Label'
+      OnClick = buNewLabelClick
+    end
+  end
+  object ly: TLayout
+    Align = Client
+    HitTest = True
+    Size.Width = 524.000000000000000000
+    Size.Height = 389.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    OnMouseDown = SelectionAllMouseDown
+    object Selection1: TSelection
+      GripSize = 7.000000000000000000
+      HideSelection = True
+      Proportional = False
+      Position.X = 48.000000000000000000
+      Position.Y = 40.000000000000000000
+      Size.Width = 169.000000000000000000
+      Size.Height = 145.000000000000000000
+      Size.PlatformDefault = False
+      ShowHandles = True
+      OnMouseDown = SelectionAllMouseDown
+      object Glyph1: TGlyph
+        Align = Client
+        Size.Width = 169.000000000000000000
+        Size.Height = 145.000000000000000000
+        Size.PlatformDefault = False
+        ImageIndex = 0
+        Images = dm.il
+      end
+    end
+    object Selection2: TSelection
+      GripSize = 7.000000000000000000
+      HideSelection = True
+      Proportional = False
+      Position.X = 264.000000000000000000
+      Position.Y = 40.000000000000000000
+      Size.Width = 169.000000000000000000
+      Size.Height = 145.000000000000000000
+      Size.PlatformDefault = False
+      ShowHandles = True
+      OnMouseDown = SelectionAllMouseDown
+      object Glyph2: TGlyph
+        Align = Client
+        Size.Width = 169.000000000000000000
+        Size.Height = 145.000000000000000000
+        Size.PlatformDefault = False
+        ImageIndex = 2
+        Images = dm.il
+      end
+    end
+    object Selection3: TSelection
+      GripSize = 7.000000000000000000
+      HideSelection = True
+      Proportional = False
+      Position.X = 176.000000000000000000
+      Position.Y = 240.000000000000000000
+      Size.Width = 162.000000000000000000
+      Size.Height = 106.000000000000000000
+      Size.PlatformDefault = False
+      ShowHandles = True
+      OnMouseDown = SelectionAllMouseDown
+      object Rectangle1: TRectangle
+        Align = Client
+        HitTest = False
+        Size.Width = 162.000000000000000000
+        Size.Height = 106.000000000000000000
+        Size.PlatformDefault = False
+      end
+    end
+    object Selection5: TSelection
+      GripSize = 7.000000000000000000
+      HideSelection = True
+      Proportional = False
+      Position.X = 8.000000000000000000
+      Position.Y = 248.000000000000000000
+      Size.Width = 162.000000000000000000
+      Size.Height = 106.000000000000000000
+      Size.PlatformDefault = False
+      ShowHandles = True
+      OnMouseDown = SelectionAllMouseDown
+      object Label1: TLabel
+        Align = Client
+        StyledSettings = [Family]
+        Size.Width = 162.000000000000000000
+        Size.Height = 106.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 28.000000000000000000
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TextSettings.FontColor = claCrimson
+        TextSettings.HorzAlign = Center
+        Text = 'MEOW'
+        TabOrder = 0
+      end
+    end
+  end
+  object tbOptions: TToolBar
+    Align = Bottom
+    Position.Y = 581.000000000000000000
+    Size.Width = 524.000000000000000000
+    Size.Height = 48.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    object biBringToFront: TButton
+      Align = Left
+      Size.Width = 48.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'arrowuptoolbutton'
+      TabOrder = 2
+      Text = 'biBringToFront'
+      OnClick = biBringToFrontClick
+    end
+    object buSendToBack: TButton
+      Align = Left
+      Position.X = 48.000000000000000000
+      Size.Width = 48.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'arrowdowntoolbutton'
+      TabOrder = 1
+      Text = 'Button1'
+      OnClick = buSendToBackClick
+    end
+    object trRotation: TTrackBar
+      Align = VertCenter
+      CanParentFocus = True
+      Max = 180.000000000000000000
+      Min = -180.000000000000000000
+      Orientation = Horizontal
+      Position.X = 96.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 380.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      OnChange = trRotationChange
+    end
+    object buDel: TButton
+      Align = Right
+      Position.X = 476.000000000000000000
+      Size.Width = 48.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'trashtoolbutton'
+      TabOrder = 0
+      Text = 'Button1'
+      OnClick = buDelClick
+    end
+  end
+  object tbImage: TToolBar
+    Align = Bottom
+    Position.Y = 533.000000000000000000
+    Size.Width = 524.000000000000000000
+    Size.Height = 48.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    object buImagePrev: TButton
+      Align = Left
+      Size.Width = 48.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'arrowlefttoolbutton'
+      TabOrder = 4
+      Text = 'biBringToFront'
+      OnClick = buImagePrevClick
+    end
+    object buImageNext: TButton
+      Align = Left
+      Position.X = 48.000000000000000000
+      Size.Width = 48.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'arrowrighttoolbutton'
+      TabOrder = 3
+      Text = 'biBringToFront'
+      OnClick = buImageNextClick
+    end
+    object buImageSelect: TButton
+      Align = Right
+      Position.X = 428.000000000000000000
+      Size.Width = 48.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      Text = '...'
+      OnClick = buImageSelectClick
+    end
+    object buImageRND: TButton
+      Align = Right
+      Position.X = 476.000000000000000000
+      Size.Width = 48.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Text = 'RND'
+      OnClick = buImageRNDClick
+    end
+  end
+  object tbRect: TToolBar
+    Align = Bottom
+    Position.Y = 485.000000000000000000
+    Size.Width = 524.000000000000000000
+    Size.Height = 48.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    object ComboColorBox: TComboColorBox
+      Align = Left
+      Color = claWhite
+      Position.Y = 8.000000000000000000
+      Size.Width = 97.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      OnChange = ComboColorBoxChange
+    end
+    object trRectRadious: TTrackBar
+      Align = VertCenter
+      CanParentFocus = True
+      Orientation = Horizontal
+      Position.X = 97.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 427.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      OnChange = trRectRadiousChange
+    end
+  end
+  object tbText: TToolBar
+    Align = Bottom
+    Position.Y = 437.000000000000000000
+    Size.Width = 524.000000000000000000
+    Size.Height = 48.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 5
+    object ComboColorText: TComboColorBox
+      Align = Left
+      Color = claWhite
+      Position.Y = 8.000000000000000000
+      Size.Width = 97.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      OnChange = ComboColorTextChange
+    end
+    object trTextSize: TTrackBar
+      Align = VertCenter
+      CanParentFocus = True
+      Min = 10.000000000000000000
+      Orientation = Horizontal
+      Position.X = 97.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 427.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      Value = 50.000000000000000000
+      OnChange = trTextSizeChange
+    end
+  end
+end

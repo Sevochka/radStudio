@@ -1,0 +1,352 @@
+object fm: Tfm
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 621
+  ClientWidth = 452
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 3
+  object ToolBar1: TToolBar
+    Size.Width = 452.000000000000000000
+    Size.Height = 48.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object buRestart: TButton
+      Align = FitLeft
+      StyledSettings = [Family, FontColor]
+      Margins.Left = 3.000000000000000000
+      Margins.Top = 3.000000000000000000
+      Margins.Right = 3.000000000000000000
+      Margins.Bottom = 3.000000000000000000
+      Position.X = 3.000000000000000000
+      Position.Y = 3.000000000000000000
+      Size.Width = 119.481918334960900000
+      Size.Height = 42.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'Restart'
+      TextSettings.Font.Size = 20.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      OnClick = buRestartClick
+    end
+    object buAbout: TButton
+      Align = FitRight
+      Position.X = 404.000000000000000000
+      Size.Width = 48.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'infotoolbutton'
+      TabOrder = 1
+      Text = 'Button1'
+      OnClick = buAboutClick
+    end
+  end
+  object GridPanelLayout1: TGridPanelLayout
+    Align = Top
+    Position.Y = 48.000000000000000000
+    Size.Width = 452.000000000000000000
+    Size.Height = 153.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    ColumnCollection = <
+      item
+        Value = 50.000000000000000000
+      end
+      item
+        Value = 50.000000000000000000
+      end>
+    ControlCollection = <
+      item
+        Column = 0
+        Control = Rectangle1
+        Row = 0
+      end
+      item
+        Column = 1
+        Control = Rectangle2
+        Row = 0
+      end>
+    RowCollection = <
+      item
+        Value = 100.000000000000000000
+      end
+      item
+        SizeStyle = Auto
+      end>
+    object Rectangle1: TRectangle
+      Align = Client
+      Fill.Color = xFF81EC48
+      Margins.Left = 10.000000000000000000
+      Margins.Top = 10.000000000000000000
+      Margins.Right = 10.000000000000000000
+      Margins.Bottom = 10.000000000000000000
+      Size.Width = 206.000000000000000000
+      Size.Height = 133.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Color = xFF2B5C91
+      Stroke.Thickness = 5.000000000000000000
+      Stroke.Cap = Round
+      XRadius = 20.000000000000000000
+      YRadius = 20.000000000000000000
+      object laCorrect: TLabel
+        Align = Client
+        StyledSettings = [FontColor]
+        Size.Width = 206.000000000000000000
+        Size.Height = 133.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Impact'
+        TextSettings.Font.Size = 28.000000000000000000
+        TextSettings.Font.StyleExt = {00070000000000000002000000}
+        TextSettings.HorzAlign = Center
+        Text = 'Correct = 0'
+        TabOrder = 0
+      end
+    end
+    object Rectangle2: TRectangle
+      Align = Client
+      Fill.Color = xFFD67586
+      Margins.Left = 10.000000000000000000
+      Margins.Top = 10.000000000000000000
+      Margins.Right = 10.000000000000000000
+      Margins.Bottom = 10.000000000000000000
+      Size.Width = 206.000000000000000000
+      Size.Height = 133.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Color = xFF2B5C91
+      Stroke.Thickness = 5.000000000000000000
+      Stroke.Cap = Round
+      XRadius = 20.000000000000000000
+      YRadius = 20.000000000000000000
+      object laWrong: TLabel
+        Align = Client
+        StyledSettings = [FontColor]
+        Size.Width = 206.000000000000000000
+        Size.Height = 133.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Impact'
+        TextSettings.Font.Size = 28.000000000000000000
+        TextSettings.Font.StyleExt = {00070000000000000002000000}
+        TextSettings.HorzAlign = Center
+        Text = 'Incorrect = 0'
+        TabOrder = 0
+      end
+    end
+  end
+  object Brush1: TBrushObject
+    StyleName = 'Brush1'
+    Brush.Color = xFF56E838
+  end
+  object Brush2: TBrushObject
+    StyleName = 'Brush2'
+    Brush.Color = xFF4897EC
+  end
+  object GridPanelLayout2: TGridPanelLayout
+    Align = Bottom
+    Position.Y = 496.000000000000000000
+    Size.Width = 452.000000000000000000
+    Size.Height = 125.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    ColumnCollection = <
+      item
+        Value = 50.000000000000000000
+      end
+      item
+        Value = 50.000000000000000000
+      end>
+    ControlCollection = <
+      item
+        Column = 0
+        Control = buYes
+        Row = 0
+      end
+      item
+        Column = 1
+        Control = buNo
+        Row = 0
+      end>
+    RowCollection = <
+      item
+        Value = 100.000000000000000000
+      end
+      item
+        SizeStyle = Auto
+      end>
+    object buYes: TButton
+      Align = Client
+      StyledSettings = [Family]
+      Margins.Left = 10.000000000000000000
+      Margins.Top = 10.000000000000000000
+      Margins.Right = 10.000000000000000000
+      Margins.Bottom = 10.000000000000000000
+      Size.Width = 206.000000000000000000
+      Size.Height = 105.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Text = 'Yes'
+      TextSettings.Font.Size = 80.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.FontColor = claGreen
+      OnClick = buYesClick
+    end
+    object buNo: TButton
+      Align = Client
+      StyledSettings = [Family]
+      Margins.Left = 10.000000000000000000
+      Margins.Top = 10.000000000000000000
+      Margins.Right = 10.000000000000000000
+      Margins.Bottom = 10.000000000000000000
+      Size.Width = 206.000000000000000000
+      Size.Height = 105.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'No'
+      TextSettings.Font.Size = 80.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.FontColor = claCrimson
+      OnClick = buNoClick
+    end
+  end
+  object laCode: TLabel
+    Align = Client
+    StyledSettings = [Family, FontColor]
+    Size.Width = 452.000000000000000000
+    Size.Height = 152.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Size = 48.000000000000000000
+    TextSettings.Font.StyleExt = {00070000000000000004000000}
+    TextSettings.HorzAlign = Center
+    Text = '10 + 11 = 21'
+    TabOrder = 5
+  end
+  object laQuestion: TLabel
+    Align = Bottom
+    StyledSettings = [Family, FontColor]
+    Position.Y = 353.000000000000000000
+    Size.Width = 452.000000000000000000
+    Size.Height = 23.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Size = 26.000000000000000000
+    TextSettings.Font.StyleExt = {00070000000000000004000000}
+    TextSettings.HorzAlign = Center
+    Text = 'Is it correct?'
+    TabOrder = 6
+  end
+  object GridPanelLayout3: TGridPanelLayout
+    Align = Bottom
+    Position.Y = 376.000000000000000000
+    Size.Width = 452.000000000000000000
+    Size.Height = 120.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 7
+    ColumnCollection = <
+      item
+        Value = 50.000000000000000000
+      end
+      item
+        Value = 50.000000000000000000
+      end>
+    ControlCollection = <
+      item
+        Column = 0
+        Control = buEasy
+        Row = 0
+      end
+      item
+        Column = 1
+        Control = buNormal
+        Row = 0
+      end
+      item
+        Column = 0
+        Control = buHard
+        Row = 1
+      end
+      item
+        Column = 1
+        Control = buChallenging
+        Row = 1
+      end>
+    RowCollection = <
+      item
+        Value = 50.000000000000000000
+      end
+      item
+        Value = 50.000000000000000000
+      end
+      item
+        SizeStyle = Auto
+      end>
+    object buEasy: TButton
+      Align = Client
+      StyledSettings = [Family]
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Size.Width = 216.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 4
+      Text = 'Easy'
+      TextSettings.Font.Size = 28.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.FontColor = claBlue
+      OnClick = buEasyClick
+    end
+    object buNormal: TButton
+      Align = Client
+      StyledSettings = [Family]
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Size.Width = 216.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      Text = 'Normal'
+      TextSettings.Font.Size = 28.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.FontColor = claTomato
+      OnClick = buNormalClick
+    end
+    object buHard: TButton
+      Align = Client
+      StyledSettings = [Family]
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Size.Width = 216.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      Text = 'Hard'
+      TextSettings.Font.Size = 28.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.FontColor = claSkyblue
+      OnClick = buHardClick
+    end
+    object buChallenging: TButton
+      Align = Client
+      StyledSettings = [Family]
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Size.Width = 216.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Text = 'Challenging'
+      TextSettings.Font.Size = 28.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.FontColor = claChocolate
+      OnClick = buChallengingClick
+    end
+  end
+end
