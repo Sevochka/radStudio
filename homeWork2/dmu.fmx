@@ -1,0 +1,90 @@
+object dm: Tdm
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 480
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object FDConnection1: TFDConnection
+    Params.Strings = (
+      'Database=C:\Users\VD\Desktop\home\DATABASE.FDB'
+      'User_Name=SYSDBA'
+      'Password=masterkey'
+      'CharacterSet=UTF8'
+      'DriverID=FB')
+    Connected = True
+    Left = 184
+    Top = 128
+  end
+  object toDo: TFDQuery
+    Active = True
+    Connection = FDConnection1
+    SQL.Strings = (
+      'select '
+      '    todo.title,'
+      '    todo.description'
+      'from todo')
+    Left = 360
+    Top = 128
+    object toDoTITLE: TWideStringField
+      FieldName = 'TITLE'
+      Origin = 'TITLE'
+      FixedChar = True
+      Size = 40
+    end
+    object toDoDESCRIPTION: TWideStringField
+      FieldName = 'DESCRIPTION'
+      Origin = 'DESCRIPTION'
+      FixedChar = True
+      Size = 300
+    end
+  end
+  object FDStoredProc1: TFDStoredProc
+    Connection = FDConnection1
+    Left = 272
+    Top = 256
+  end
+  object FDGUIxWaitCursor1: TFDGUIxWaitCursor
+    Provider = 'FMX'
+    Left = 120
+    Top = 368
+  end
+  object FDPhysFBDriverLink1: TFDPhysFBDriverLink
+    Left = 232
+    Top = 368
+  end
+  object delToDo: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'DELETE FROM todo'
+      '  WHERE todo.title =(:NewTitle)')
+    Left = 424
+    Top = 72
+    ParamData = <
+      item
+        Name = 'NEWTITLE'
+        ParamType = ptInput
+        Value = Null
+      end>
+  end
+  object addToDo: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'insert into todo (title, description)'
+      'values(:NewTitle, :NewDesc)')
+    Left = 504
+    Top = 136
+    ParamData = <
+      item
+        Name = 'NEWTITLE'
+        ParamType = ptInput
+      end
+      item
+        Name = 'NEWDESC'
+        ParamType = ptInput
+      end>
+  end
+end
