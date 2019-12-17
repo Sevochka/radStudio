@@ -10,9 +10,7 @@ object dm: Tdm
   DesignerMasterStyle = 0
   object FDConnection1: TFDConnection
     Params.Strings = (
-      
-        'Database=C:\Users\Sevochka\Desktop\radStudio\homeWork2\DATABASE.' +
-        'FDB'
+      'Database=C:\Users\Sevka\Desktop\radStudio\homeWork2\DATABASE.FDB'
       'User_Name=SYSDBA'
       'Password=masterkey'
       'CharacterSet=UTF8'
