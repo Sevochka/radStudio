@@ -71,7 +71,6 @@ __published:	// IDE-managed Components
 	TButton *buAdd;
 	TLabel *Label3;
 	TModel3D *Model3D1;
-	TLinkPropertyToField *LinkPropertyToFieldText2;
 	TButton *buDelete;
 	TLinkPropertyToField *LinkPropertyToFieldText3;
 	TOpenDialog *OpenDialog1;
@@ -81,7 +80,6 @@ __published:	// IDE-managed Components
 	TLayout *Layout2;
 	TLabel *Label4;
 	TLayout *Layout3;
-	TButton *Button3;
 	TButton *Button4;
 	TGridPanelLayout *GridPanelLayout2;
 	TButton *Button1;
@@ -92,6 +90,13 @@ __published:	// IDE-managed Components
 	TStyleBook *sbStupid;
 	TStyleBook *sbPutin;
 	TButton *buMenuGo;
+	TLayout *Layout4;
+	TEdit *Edit1;
+	TLayout *Layout5;
+	TLinkControlToField *LinkControlToField1;
+	TLinkPropertyToField *LinkPropertyToFieldText;
+	TButton *Button3;
+	TButton *Button8;
 	void __fastcall FormCreate(TObject *Sender);
 	void __fastcall FormKeyUp(TObject *Sender, WORD &Key, System::WideChar &KeyChar,
           TShiftState Shift);
@@ -108,6 +113,10 @@ __published:	// IDE-managed Components
 	void __fastcall Button6Click(TObject *Sender);
 	void __fastcall buSettingsClick(TObject *Sender);
 	void __fastcall buMenuGoClick(TObject *Sender);
+	void __fastcall btnBackClick(TObject *Sender);
+	void __fastcall Label3DblClick(TObject *Sender);
+	void __fastcall Layout5Click(TObject *Sender);
+	void __fastcall Button8Click(TObject *Sender);
 
 private:	// User declarations
 public:		// User declarations

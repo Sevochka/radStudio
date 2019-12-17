@@ -60,7 +60,7 @@ Coordinates=312,90,72,33
 Visible=False
 
 [BindSourceDB1]
-Coordinates=570,240,92,141
+Coordinates=570,240,92,159
 
 [BindingsList1]
 Coordinates=118,80,82,33
@@ -69,7 +69,7 @@ Coordinates=118,80,82,33
 Coordinates=0,0,97,51
 
 []
-Coordinates=382,373,49,51
+Coordinates=225,1,59,58
 
 [GridPanelLayout1]
 Coordinates=108,70,102,33
@@ -90,23 +90,17 @@ Coordinates=448,80,47,51
 Coordinates=505,80,46,51
 
 [edDesc]
-Coordinates=448,308,50,51
+Coordinates=350,310,50,51
 
 [Form1.addToDo]
 Coordinates=590,264,93,51
-
-[dm.FDStoredProc1]
-Coordinates=357,163,107,51
-
-[dm.addToDo]
-Coordinates=100,1,77,51
 
 [dm.toDo]
 Coordinates=74,140,56,33
 Visible=False
 
 [Label3]
-Coordinates=500,340,46,51
+Coordinates=450,360,46,51
 
 [Model3D1]
 Coordinates=248,150,62,33
@@ -121,29 +115,89 @@ Coordinates=0,0,73,51
 Coordinates=248,150,77,33
 
 [Label2]
-Coordinates=451,373,46,51
+Coordinates=340,400,46,51
 
 [Layout1]
 Coordinates=248,150,53,33
 
 [tiToDo]
-Coordinates=322,256,59,33
+Coordinates=322,256,46,33
 
 [tiMenu]
-Coordinates=408,188,59,33
+Coordinates=408,188,47,33
 
 [tiNote]
-Coordinates=10,256,59,33
+Coordinates=10,256,43,33
 
 [laNote]
-Coordinates=670,120,40,51
+Coordinates=670,120,45,51
 
 [buSettings]
-Coordinates=357,80,53,51
+Coordinates=357,80,67,51
 
 [sbLight]
-Coordinates=248,150,70,33
+Coordinates=248,150,51,33
 
 [tiTheme]
-Coordinates=166,256,59,33
+Coordinates=166,256,53,33
+
+[Button4]
+Coordinates=601,1,53,51
+
+[buMenuGo]
+Coordinates=0,0,68,51
+
+[sbPutin]
+Coordinates=601,155,52,33
+
+[Label4]
+Coordinates=601,78,46,51
+
+[Layout3]
+Coordinates=340,380,53,33
+
+[sbDark]
+Coordinates=323,380,49,33
+
+[Button7]
+Coordinates=359,243,53,51
+
+[Button6]
+Coordinates=176,284,53,51
+
+[Layout2]
+Coordinates=254,380,53,33
+
+[sbStupid]
+Coordinates=185,380,58,33
+
+[Button5]
+Coordinates=290,284,53,51
+
+[Button1]
+Coordinates=97,1,53,51
+
+[GridPanelLayout2]
+Coordinates=760,1,102,33
+
+[Edit1]
+Coordinates=600,420,40,51
+
+[Layout4]
+Coordinates=67,380,53,33
+
+[Layout5]
+Coordinates=601,155,53,33
+
+[Button3]
+Coordinates=185,406,53,51
+
+[dm.addNote]
+Coordinates=357,163,73,51
+
+[dm.editNote]
+Coordinates=100,1,73,51
+
+[Button8]
+Coordinates=497,308,53,51
 

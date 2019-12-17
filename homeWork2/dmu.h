@@ -33,16 +33,17 @@ class Tdm : public TForm
 __published:	// IDE-managed Components
 	TFDConnection *FDConnection1;
 	TFDQuery *toDo;
-	TFDStoredProc *FDStoredProc1;
+	TFDStoredProc *addNote;
 	TFDGUIxWaitCursor *FDGUIxWaitCursor1;
 	TFDPhysFBDriverLink *FDPhysFBDriverLink1;
 	TWideStringField *toDoTITLE;
 	TWideStringField *toDoDESCRIPTION;
 	TFDQuery *delToDo;
-	TFDQuery *addToDo;
+	TFDQuery *editNote;
 private:	// User declarations
 public:		// User declarations
 	__fastcall Tdm(TComponent* Owner);
+	void addNoteToDo(UnicodeString aTitle, UnicodeString aDesc);
 };
 //---------------------------------------------------------------------------
 extern PACKAGE Tdm *dm;

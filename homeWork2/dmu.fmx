@@ -10,12 +10,15 @@ object dm: Tdm
   DesignerMasterStyle = 0
   object FDConnection1: TFDConnection
     Params.Strings = (
-      'Database=C:\Users\VD\Desktop\home\DATABASE.FDB'
+      
+        'Database=C:\Users\Sevochka\Desktop\radStudio\homeWork2\DATABASE.' +
+        'FDB'
       'User_Name=SYSDBA'
       'Password=masterkey'
       'CharacterSet=UTF8'
       'DriverID=FB')
     Connected = True
+    LoginPrompt = False
     Left = 184
     Top = 128
   end
@@ -42,10 +45,26 @@ object dm: Tdm
       Size = 300
     end
   end
-  object FDStoredProc1: TFDStoredProc
+  object addNote: TFDStoredProc
     Connection = FDConnection1
-    Left = 272
-    Top = 256
+    StoredProcName = 'NOTE_INS'
+    Left = 256
+    Top = 160
+    ParamData = <
+      item
+        Position = 1
+        Name = 'DESCRIPTION'
+        DataType = ftFixedWideChar
+        ParamType = ptInput
+        Size = 40
+      end
+      item
+        Position = 2
+        Name = 'TITLE'
+        DataType = ftFixedWideChar
+        ParamType = ptInput
+        Size = 300
+      end>
   end
   object FDGUIxWaitCursor1: TFDGUIxWaitCursor
     Provider = 'FMX'
@@ -70,21 +89,35 @@ object dm: Tdm
         Value = Null
       end>
   end
-  object addToDo: TFDQuery
+  object editNote: TFDQuery
     Connection = FDConnection1
     SQL.Strings = (
-      'insert into todo (title, description)'
-      'values(:NewTitle, :NewDesc)')
+      'UPDATE todo SET title = (:NewTitle), description = (:NewDesc)'
+      'where todo.title = (:Title)'
+      '')
     Left = 504
     Top = 136
     ParamData = <
       item
         Name = 'NEWTITLE'
+        DataType = ftFixedWideChar
         ParamType = ptInput
+        Size = 40
+        Value = Null
       end
       item
         Name = 'NEWDESC'
+        DataType = ftFixedWideChar
         ParamType = ptInput
+        Size = 300
+        Value = Null
+      end
+      item
+        Name = 'TITLE'
+        DataType = ftFixedWideChar
+        ParamType = ptInput
+        Size = 40
+        Value = Null
       end>
   end
 end

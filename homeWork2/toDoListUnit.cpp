@@ -72,19 +72,18 @@ void __fastcall TTabbedwithNavigationForm::ListView1ItemClick(TObject * const Se
 
 void __fastcall TTabbedwithNavigationForm::buAddClick(TObject *Sender)
 {
-
-
-
 	if((edTitle->Text != "") && (edDesc->Text != ""))
 	{
-		dm->addToDo->ParamByName("NewTitle")->Value = edTitle->Text;
-		dm->addToDo->ParamByName("NewDesc")->Value = edDesc->Text;
-		dm->addToDo->ExecSQL();
+		//dm->addToDo->ParamByName("NewTitle")->Value = edTitle->Text;
+		//dm->addToDo->ParamByName("NewDesc")->Value = edDesc->Text;
+		//dm->addToDo->ExecSQL();
+		dm->addNoteToDo(edTitle->Text, edDesc->Text);
 		TabControl2->GotoVisibleTab(TabItem5->Index);
 		edDesc->Text = "";
 		edTitle->Text = "";
+		dm->toDo->Close();
+		dm->toDo->Open();
 	}
-
 }
 //---------------------------------------------------------------------------
 
@@ -94,6 +93,8 @@ void __fastcall TTabbedwithNavigationForm::buDeleteClick(TObject *Sender)
 		dm->delToDo->ParamByName("NewTitle")->Value = laNote->Text;
 		dm->delToDo->ExecSQL();
 		TabControl1->GotoVisibleTab(tiToDo->Index);
+        dm->toDo->Close();
+		dm->toDo->Open();
 }
 //---------------------------------------------------------------------------
 
@@ -102,15 +103,18 @@ void __fastcall TTabbedwithNavigationForm::buDeleteClick(TObject *Sender)
 
 void __fastcall TTabbedwithNavigationForm::Button3Click(TObject *Sender)
 {
-	TabControl1->GotoVisibleTab(tiMenu->Index);
+	TabControl1->GotoVisibleTab(tiToDo->Index);
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TTabbedwithNavigationForm::Button2Click(TObject *Sender)
 {
+	dm->toDo->Close();
+	dm->toDo->Open();
 	 TabControl1->GotoVisibleTab(tiToDo->Index);
 }
 //---------------------------------------------------------------------------
+
 
 void __fastcall TTabbedwithNavigationForm::Button7Click(TObject *Sender)
 {
@@ -148,4 +152,36 @@ void __fastcall TTabbedwithNavigationForm::buMenuGoClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+
+void __fastcall TTabbedwithNavigationForm::btnBackClick(TObject *Sender)
+{
+	dm->toDo->Close();
+	dm->toDo->Open();
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TTabbedwithNavigationForm::Label3DblClick(TObject *Sender)
+{
+    Edit1->Visible = true;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TTabbedwithNavigationForm::Layout5Click(TObject *Sender)
+{
+    Edit1->Visible = false;
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TTabbedwithNavigationForm::Button8Click(TObject *Sender)
+{
+		dm->editNote->ParamByName("NewTitle")->Value = "Hello";
+		dm->editNote->ParamByName("NewDesc")->Value = "hello222";
+		dm->editNote->ParamByName("Title")->Value = laNote->Text;
+		dm->editNote->ExecSQL();
+		dm->toDo->Close();
+		dm->toDo->Open();
+}
+//---------------------------------------------------------------------------
 

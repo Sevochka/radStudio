@@ -7,9 +7,6 @@ Coordinates=167,1,90,33
 [FDPhysFBDriverLink1]
 Coordinates=167,53,123,33
 
-[FDStoredProc1]
-Coordinates=10,10,89,51
-
 [FDGUIxWaitCursor1]
 Coordinates=48,71,113,33
 
@@ -19,9 +16,12 @@ Coordinates=118,80,108,33
 [toDoTITLE]
 Coordinates=49,80,66,33
 
-[addToDo]
-Coordinates=260,20,58,51
-
 [delToDo]
 Coordinates=40,80,55,51
+
+[addNote]
+Coordinates=10,10,55,51
+
+[editNote]
+Coordinates=260,20,55,51
 

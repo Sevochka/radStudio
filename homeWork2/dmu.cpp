@@ -14,3 +14,8 @@ __fastcall Tdm::Tdm(TComponent* Owner)
 {
 }
 //---------------------------------------------------------------------------
+void Tdm::addNoteToDo(UnicodeString aTitle, UnicodeString aDesc) {
+	addNote->ParamByName("TITLE")->Value = aTitle;
+	addNote->ParamByName("DESCRIPTION")->Value = aDesc;
+    addNote->ExecProc();
+}
