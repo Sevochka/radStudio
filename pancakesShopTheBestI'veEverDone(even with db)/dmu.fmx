@@ -1,0 +1,304 @@
+object dm: Tdm
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 480
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object FDConnection1: TFDConnection
+    Params.Strings = (
+      'Database=C:\Users\VD\Desktop\exPancakes\BLINCHIKI.FDB'
+      'User_Name=SYSDBA'
+      'Password=masterkey'
+      'CharacterSet=UTF8'
+      'DriverID=FB')
+    Connected = True
+    LoginPrompt = False
+    AfterConnect = FDConnection1AfterConnect
+    Left = 176
+    Top = 88
+  end
+  object quCategory: TFDQuery
+    Active = True
+    Connection = FDConnection1
+    SQL.Strings = (
+      'select '
+      '    category.id,'
+      '    category.name'
+      'from category'
+      'order by category.id, category.name')
+    Left = 456
+    Top = 72
+    object quCategoryID: TIntegerField
+      FieldName = 'ID'
+      Origin = 'ID'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object quCategoryNAME: TWideStringField
+      FieldName = 'NAME'
+      Origin = 'NAME'
+      Required = True
+      Size = 70
+    end
+  end
+  object quProducts: TFDQuery
+    Active = True
+    Connection = FDConnection1
+    SQL.Strings = (
+      'select '
+      '    product.id,'
+      '    product.category_id,'
+      '    product.name,'
+      '    product.image,'
+      '    product.gram,'
+      '    product.kcal,'
+      '    product.price,'
+      '    product.note'
+      'from product'
+      'order by product.name')
+    Left = 328
+    Top = 80
+    object quProductsID: TIntegerField
+      FieldName = 'ID'
+      Origin = 'ID'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object quProductsCATEGORY_ID: TIntegerField
+      FieldName = 'CATEGORY_ID'
+      Origin = 'CATEGORY_ID'
+      Required = True
+    end
+    object quProductsNAME: TWideStringField
+      FieldName = 'NAME'
+      Origin = 'NAME'
+      Required = True
+      Size = 70
+    end
+    object quProductsIMAGE: TBlobField
+      FieldName = 'IMAGE'
+      Origin = 'IMAGE'
+    end
+    object quProductsGRAM: TIntegerField
+      FieldName = 'GRAM'
+      Origin = 'GRAM'
+    end
+    object quProductsKCAL: TIntegerField
+      FieldName = 'KCAL'
+      Origin = 'KCAL'
+    end
+    object quProductsPRICE: TFloatField
+      FieldName = 'PRICE'
+      Origin = 'PRICE'
+      Required = True
+    end
+    object quProductsNOTE: TWideStringField
+      FieldName = 'NOTE'
+      Origin = 'NOTE'
+      Size = 4000
+    end
+  end
+  object spFeedbackIns: TFDStoredProc
+    Connection = FDConnection1
+    StoredProcName = 'NEW_PROCEDURE'
+    Left = 456
+    Top = 264
+    ParamData = <
+      item
+        Position = 1
+        Name = 'FIO'
+        DataType = ftWideString
+        ParamType = ptInput
+        Size = 40
+      end
+      item
+        Position = 2
+        Name = 'PHONE'
+        DataType = ftWideString
+        ParamType = ptInput
+        Size = 20
+      end
+      item
+        Position = 3
+        Name = 'EMAIL'
+        DataType = ftWideString
+        ParamType = ptInput
+        Size = 30
+      end
+      item
+        Position = 4
+        Name = 'NOTE'
+        DataType = ftWideString
+        ParamType = ptInput
+        Size = 200
+      end>
+  end
+  object FDGUIxWaitCursor1: TFDGUIxWaitCursor
+    Provider = 'FMX'
+    Left = 64
+    Top = 384
+  end
+  object FDPhysFBDriverLink1: TFDPhysFBDriverLink
+    Left = 176
+    Top = 392
+  end
+  object quFeedback: TFDQuery
+    Active = True
+    Connection = FDConnection1
+    SQL.Strings = (
+      'select '
+      '    feedback.fio,'
+      '    feedback.phone,'
+      '    feedback.email,'
+      '    feedback.note'
+      'from feedback'
+      'order by feedback.fio, feedback.note')
+    Left = 384
+    Top = 136
+    object quFeedbackFIO: TWideStringField
+      FieldName = 'FIO'
+      Origin = 'FIO'
+      Size = 40
+    end
+    object quFeedbackPHONE: TWideStringField
+      FieldName = 'PHONE'
+      Origin = 'PHONE'
+    end
+    object quFeedbackEMAIL: TWideStringField
+      FieldName = 'EMAIL'
+      Origin = 'EMAIL'
+      Size = 30
+    end
+    object quFeedbackNOTE: TWideStringField
+      FieldName = 'NOTE'
+      Origin = 'NOTE'
+      Size = 200
+    end
+  end
+  object spAddToCart: TFDStoredProc
+    Connection = FDConnection1
+    StoredProcName = 'ADDTOCART'
+    Left = 520
+    Top = 344
+    ParamData = <
+      item
+        Position = 1
+        Name = 'NAME'
+        DataType = ftWideString
+        ParamType = ptInput
+        Size = 34
+      end
+      item
+        Position = 2
+        Name = 'QUANTITY'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Position = 3
+        Name = 'PRODUCT_PRICE'
+        DataType = ftFloat
+        ParamType = ptInput
+      end
+      item
+        Position = 4
+        Name = 'PRODUCT_ID'
+        DataType = ftInteger
+        ParamType = ptInput
+      end>
+  end
+  object spBuy: TFDStoredProc
+    Connection = FDConnection1
+    StoredProcName = 'NEWORDER'
+    Left = 296
+    Top = 304
+    ParamData = <
+      item
+        Position = 1
+        Name = 'CLIENT_ADDRESS'
+        DataType = ftWideString
+        ParamType = ptInput
+        Size = 150
+      end
+      item
+        Position = 2
+        Name = 'DELIVERY_NOTE'
+        DataType = ftWideString
+        ParamType = ptInput
+        Size = 4000
+      end
+      item
+        Position = 3
+        Name = 'CLIENT_EMAIL'
+        DataType = ftWideString
+        ParamType = ptInput
+        Size = 70
+      end
+      item
+        Position = 4
+        Name = 'CLIENT_TEL'
+        DataType = ftWideString
+        ParamType = ptInput
+        Size = 15
+      end
+      item
+        Position = 5
+        Name = 'CLIENT_FIO'
+        DataType = ftWideString
+        ParamType = ptInput
+        Size = 70
+      end>
+  end
+  object quOrder: TFDQuery
+    Active = True
+    Connection = FDConnection1
+    SQL.Strings = (
+      'select '
+      '    ordering_list.id,'
+      '    ordering_list.order_id,'
+      '    ordering_list.product_id,'
+      '    ordering_list.product_price,'
+      '    ordering_list.quantity,'
+      '    ordering_list.name'
+      'from ordering_list'
+      'order by ordering_list.id, ordering_list.quantity')
+    Left = 456
+    Top = 136
+    object quOrderID: TIntegerField
+      FieldName = 'ID'
+      Origin = 'ID'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object quOrderORDER_ID: TIntegerField
+      FieldName = 'ORDER_ID'
+      Origin = 'ORDER_ID'
+      Required = True
+    end
+    object quOrderPRODUCT_ID: TIntegerField
+      FieldName = 'PRODUCT_ID'
+      Origin = 'PRODUCT_ID'
+      Required = True
+    end
+    object quOrderPRODUCT_PRICE: TFloatField
+      FieldName = 'PRODUCT_PRICE'
+      Origin = 'PRODUCT_PRICE'
+      Required = True
+    end
+    object quOrderQUANTITY: TIntegerField
+      FieldName = 'QUANTITY'
+      Origin = 'QUANTITY'
+      Required = True
+    end
+    object quOrderNAME: TWideStringField
+      FieldName = 'NAME'
+      Origin = 'NAME'
+      Size = 34
+    end
+  end
+end
